@@ -309,7 +309,7 @@ class QConnection(object):
             raise QReaderException('Received message of type: %s where response was expected')
 
 
-    def async(self, query, *parameters, **options):
+    def async_(self, query, *parameters, **options):
         '''Performs an asynchronous query and returns **without** retrieving of 
         the response.
         
