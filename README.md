@@ -50,6 +50,14 @@ e.g., Python?
 - the tricky part is how to receive the result of an async request?
   which  becomes necessary when your request is not merely "setting" sth
 
+Notably, qPython's implementation of the async request demonstrated in the sample/
+does exactly this. It has two versions, one uses separate thread as the message handler
+on the calling end, and the other version uses twisted. Both version require certain
+specific behaviour in the KDB query being sent over. It is easy to see this approach
+complicates the execution flow, and the fact it requires special behaviour to be planted
+on remote side makes this inapplicable in cases where the KDB service is locked down
+from client for security reasons.
+
 *3. what is the most important user case with an async request anyway? what is the value here?*
 
 Imagine a request like this:
