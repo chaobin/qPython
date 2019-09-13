@@ -165,7 +165,7 @@ end = time.time()
 print('all tasks took %s to finish' % (end - start))
 ```
 
-With the above, the result shows that the system's critical path takes no more then
+With the above, the result shows that the system's critical path takes no more than
 what its dominant path takes to finish:
 
 ```text
@@ -176,7 +176,7 @@ query took 5.002039909362793 secs to finish
 all tasks took 5.003116846084595 to finish
 ```
 
-The pool following ability:
+About the pool:
 
 1. queue based, eliminating race condition
 1. automatically replacing a dead connection with live connection
