@@ -6,7 +6,7 @@ the qPython library developed by [DEVnet](devnet.de).
 Rationale
 ===
 
-*1. what is async IPC in KDB's terms? *
+*1. what is async IPC in KDB's terms?*
 
 https://code.kx.com/v2/basics/ipc/#async-message-set would imply that the requesting
 process would sensibly choose to not ask for return (_by negating the handle obtained
