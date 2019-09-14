@@ -128,7 +128,7 @@ is very clever and has a number of advantages:
 I optted not to use this approach because:
 
 - I do not like the idea that in the end one still has to work around a _callback_ (
-  maybe I was not smart enough to figure out how to work around this)
+  maybe I failed to realize how to figure out how to work around this)
 - I do not want my user to have to think of their code as a callback for the most part
 - qPython has an excellent code base, that I got away with almost all clean implementation
   by pure subclassing. 
