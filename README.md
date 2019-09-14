@@ -51,7 +51,7 @@ e.g., Python?
   which  becomes necessary when your request is not merely "setting" sth
 
 Notably, qPython's implementation of the async request demonstrated in the sample/
-does exactly this. It has two versions, one uses separate thread as the message handler
+does exactly this. It has two versions, one uses separate thread as a messaging thread
 on the calling end, and the other version uses twisted. Both version require certain
 specific behaviour in the KDB query being sent over. It is easy to see this approach
 complicates the execution flow, and the fact it requires special behaviour to be planted
@@ -115,8 +115,8 @@ The library greenlet extends CPython with a true coroutine (no, not your primiti
 programmer will have complete control over his/her execution flow. The ideas above make use of this
 ability, in combination of a surgical patch of the target library's socket handling part of code to
 switch to use non-blocking IO, cleverly pauses the execution at the point of IO waiting
-(_greenlet.switch()_), then resumes the execution later when the IO becomes ready. The idea
-is very clever and has a number of advantages:
+(_greenlet.switch()_), then resumes the execution later when the IO becomes ready. This idea
+of locally applying greenlet is very clever and has a number of advantages:
 
 - minimal intrusion into target library
 - possibly minimal code in implementation also
@@ -191,4 +191,9 @@ About the pool:
 1. automatically retrying at failed attempts to reconnect. this allows
    the system to self-heal
 
+Pull request and disclaimer
+===
 
+Although most of this functionality is in well separated subclasses, the qPython has an API
+called "async", which makes use of a keyword introduced since Python 3.5. So in order for me
+to create a PR, I will possibly need to talk to the qPython maintainer on how to address that.
