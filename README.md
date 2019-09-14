@@ -173,7 +173,7 @@ end = time.time()
 print('all tasks took %s to finish' % (end - start))
 ```
 
-With the above, the result shows that the system's critical path takes no more than
+With the above, the result shows that the overall computation takes no more than
 what its dominant path takes to finish:
 
 ```text
